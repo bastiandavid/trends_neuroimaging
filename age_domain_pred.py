@@ -91,7 +91,7 @@ for family_name,models in model_families:
         overall_score=0
         
         for target, weight in zip(targets, weights):
-            print(target,' ',weight)
+
             non_zero_train=train[train[target].notnull()]
             
             target_pred = cross_val_predict(model, non_zero_train[features], non_zero_train[target],
