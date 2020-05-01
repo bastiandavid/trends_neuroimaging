@@ -22,11 +22,16 @@ from sklearn.ensemble import RandomForestRegressor, AdaBoostRegressor, GradientB
 
 
 DATAPATH = ""
+FNC_SCALE = 1/500
+
 
 def load_data(data_path=DATAPATH):
     
     fnc = pd.read_csv(os.path.join(data_path, "fnc.csv"))
     loading = pd.read_csv(os.path.join(data_path, "loading.csv"))
+    
+    fnc *= FNC_SCALE
+    
     features_df = fnc.merge(loading, on='Id')
     train_scores = pd.read_csv(os.path.join(data_path, "train_scores.csv"))
     train_scores["train_set"] = True
