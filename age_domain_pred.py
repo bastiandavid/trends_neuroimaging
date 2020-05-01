@@ -102,6 +102,7 @@ for family_name,models in model_families:
             overall_score += score*weight
             
             print("{}: {}".format(target,score))
+        print("Overall-score: {}".format(overall_score))
         print()
     print()
         
