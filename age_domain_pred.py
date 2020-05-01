@@ -30,7 +30,8 @@ def load_data(data_path=DATAPATH):
     fnc = pd.read_csv(os.path.join(data_path, "fnc.csv"))
     loading = pd.read_csv(os.path.join(data_path, "loading.csv"))
     
-    fnc *= FNC_SCALE
+    fnc_features = list(fnc.columns[1:])
+    fnc[fnc_features] *= FNC_SCALE
     
     features_df = fnc.merge(loading, on='Id')
     train_scores = pd.read_csv(os.path.join(data_path, "train_scores.csv"))
