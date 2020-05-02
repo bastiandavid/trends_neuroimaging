@@ -1,0 +1,147 @@
+*****Linear Models*****
+---Ridge regression---
+Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None,
+      normalize=False, random_state=None, solver='auto', tol=0.001)
+age: 0.19848532876003938
+domain1_var1: 0.15627969750888113
+domain1_var2: 0.15130778524100463
+domain2_var1: 0.18556272976304866
+domain2_var2: 0.17880330942383557
+Overall-score: 0.17713746496694655
+
+---Lasso regression---
+Lasso(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=1000,
+      normalize=False, positive=False, precompute=False, random_state=None,
+      selection='cyclic', tol=0.0001, warm_start=False)
+age: 0.2190794887547981
+domain1_var1: 0.1585147228368231
+domain1_var2: 0.15137414570053723
+domain2_var1: 0.1867765692462493
+domain2_var2: 0.17927373542566086
+Overall-score: 0.18401320193806175
+
+---Elastic net---
+ElasticNet(alpha=1.0, copy_X=True, fit_intercept=True, l1_ratio=0.5,
+           max_iter=1000, normalize=False, positive=False, precompute=False,
+           random_state=None, selection='cyclic', tol=0.0001, warm_start=False)
+age: 0.2190794887547981
+domain1_var1: 0.1585147228368231
+domain1_var2: 0.15137414570053723
+domain2_var1: 0.1867765692462493
+domain2_var2: 0.17927373542566086
+Overall-score: 0.18401320193806175
+
+---Least angle regression---
+Lars(copy_X=True, eps=2.220446049250313e-16, fit_intercept=True, fit_path=True,
+     n_nonzero_coefs=500, normalize=True, precompute='auto', verbose=False)
+age: 0.18643792024920014
+domain1_var1: 0.22876159061555448
+domain1_var2: 0.1769712328034143
+domain2_var1: 0.1939100365448471
+domain2_var2: 0.2240812136800492
+Overall-score: 0.2000830889624364
+
+
+*****Ensemble methods*****
+---Random forest---
+RandomForestRegressor(bootstrap=True, ccp_alpha=0.0, criterion='mse',
+                      max_depth=None, max_features='auto', max_leaf_nodes=None,
+                      max_samples=None, min_impurity_decrease=0.0,
+                      min_impurity_split=None, min_samples_leaf=1,
+                      min_samples_split=2, min_weight_fraction_leaf=0.0,
+                      n_estimators=100, n_jobs=None, oob_score=False,
+                      random_state=None, verbose=0, warm_start=False)
+age: 0.1653886735522419
+domain1_var1: 0.15373005830312703
+domain1_var2: 0.15253022549684386
+domain2_var1: 0.1852979712248968
+domain2_var2: 0.17843467907593397
+Overall-score: 0.16686536553331285
+
+---AdaBoost---
+AdaBoostRegressor(base_estimator=None, learning_rate=1.0, loss='linear',
+                  n_estimators=50, random_state=None)
+age: 0.16661485238303334
+domain1_var1: 0.15450085979018505
+domain1_var2: 0.15441894293247518
+domain2_var1: 0.18726430940443464
+domain2_var2: 0.18240920768015342
+Overall-score: 0.16873828668117843
+
+---GradientBoosting---
+GradientBoostingRegressor(alpha=0.9, ccp_alpha=0.0, criterion='friedman_mse',
+                          init=None, learning_rate=0.1, loss='ls', max_depth=3,
+                          max_features=None, max_leaf_nodes=None,
+                          min_impurity_decrease=0.0, min_impurity_split=None,
+                          min_samples_leaf=1, min_samples_split=2,
+                          min_weight_fraction_leaf=0.0, n_estimators=100,
+                          n_iter_no_change=None, presort='deprecated',
+                          random_state=None, subsample=1.0, tol=0.0001,
+                          validation_fraction=0.1, verbose=0, warm_start=False)
+age: 0.15577428044477104
+domain1_var1: 0.15320855411597584
+domain1_var2: 0.15262931257726992
+domain2_var1: 0.18549099540557126
+domain2_var2: 0.1785152846958727
+Overall-score: 0.163955009822502
+
+
+*****Kernel Methods*****
+---Linear Support Vector Regression---
+LinearSVR(C=1.0, dual=True, epsilon=0.0, fit_intercept=True,
+          intercept_scaling=1.0, loss='epsilon_insensitive', max_iter=1000,
+          random_state=None, tol=0.0001, verbose=0)
+age: 0.21723065578447134
+domain1_var1: 0.15825220117781347
+domain1_var2: 0.15096766547511276
+domain2_var1: 0.18647913002468688
+domain2_var2: 0.17889350815027413
+Overall-score: 0.18322288508022166
+
+---Support Vector Regression---
+SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='scale',
+    kernel='rbf', max_iter=-1, shrinking=True, tol=0.001, verbose=False)
+age: 0.15758503868599652
+domain1_var1: 0.15209222910603
+domain1_var2: 0.150786466940504
+domain2_var1: 0.18233304544197748
+domain2_var2: 0.17674972620903875
+Overall-score: 0.16311876845287027
+
+---Nu Support Vector Regression---
+NuSVR(C=1.0, cache_size=200, coef0=0.0, degree=3, gamma='scale', kernel='rbf',
+      max_iter=-1, nu=0.5, shrinking=True, tol=0.001, verbose=False)
+age: 0.15931495835518353
+domain1_var1: 0.15208404816400709
+domain1_var2: 0.15077308861826738
+domain2_var1: 0.18253091446239672
+domain2_var2: 0.1771335035865052
+Overall-score: 0.16373575960201092
+
+
+*****Gaussian Methods*****
+---Gaussian Process Regression---
+GaussianProcessRegressor(alpha=1e-10, copy_X_train=True, kernel=None,
+                         n_restarts_optimizer=0, normalize_y=False,
+                         optimizer='fmin_l_bfgs_b', random_state=None)
+age: 0.1949579772257597
+domain1_var1: 0.2288122216369013
+domain1_var2: 0.22908924994064508
+domain2_var1: 0.2673803835717471
+domain2_var2: 0.26659398934175704
+Overall-score: 0.2320656659536617
+
+
+*****Neighbourhood*****
+---K-nearest neighbours Ball---
+KNeighborsRegressor(algorithm='ball_tree', leaf_size=30, metric='minkowski',
+                    metric_params=None, n_jobs=None, n_neighbors=5, p=2,
+                    weights='uniform')
+age: 0.17572082433875763
+domain1_var1: 0.16618043338090555
+domain1_var2: 0.16518309582738308
+domain2_var1: 0.19914633679334784
+domain2_var2: 0.19440388976452488
+Overall-score: 0.17957615456070553
+
+
