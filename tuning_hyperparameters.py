@@ -66,7 +66,7 @@ for target in targets:
     
     gs_clf = GridSearchCV(model, distributions, n_jobs=-1, 
                                      scoring=norm_abs_error, refit=True, cv=5,
-                                     verbose=3)
+                                     verbose=2)
     
     gs = gs_clf.fit(non_zero_train[features], y=non_zero_train[target])
     
