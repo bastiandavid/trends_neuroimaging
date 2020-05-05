@@ -57,15 +57,16 @@ weights = [.3, .175, .175, .175, .175]
 
 model = GradientBoostingRegressor()
 
-distributions = dict(loss=['ls','lad','huber'], learning_rate=np.linspace(0.05, 0.15,num=10),
-                     n_estimators=[100, 150, 200], max_depth=[3,4,5,6,7,8,9,10])
+distributions = dict(loss=['ls','lad'], learning_rate=[0.05, 0.1, 0.15],
+                     n_estimators=[100, 150, 200], max_depth=[3,4,5])
 
 for target in targets:
 
     non_zero_train=train[train[target].notnull()]
     
     gs_clf = GridSearchCV(model, distributions, n_jobs=-1, 
-                                     scoring=norm_abs_error, refit=True, cv=5)
+                                     scoring=norm_abs_error, refit=True, cv=5,
+                                     verbose=3)
     
     gs = gs_clf.fit(non_zero_train[features], y=non_zero_train[target])
     
