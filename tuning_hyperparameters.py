@@ -66,15 +66,17 @@ for target in targets:
     
     gs_clf = GridSearchCV(model, distributions, n_jobs=-1, 
                                      scoring=norm_abs_error, refit=True, cv=5,
-                                     verbose=3)
+                                     verbose=1)
     
     gs = gs_clf.fit(non_zero_train[features], y=non_zero_train[target])
     
     
+    print()
     print("Finished {} grid search".format(target))
-    print("Best extimator: {}".format(gs.best_estimator_))
-    print("Best parameters: {}".format(gs.best_parameters_))
+    print("Best estimator: {}".format(gs.best_estimator_))
+    print("Best parameters: {}".format(gs.best_params_))
     print("Best score: {]".format(gs.best_score_))
+    print('Saving under gs_GradientBoosting_'+target+'.pkl')
     
     joblib.dump(gs, 'gs_GradientBoosting_'+target+'.pkl')
         
