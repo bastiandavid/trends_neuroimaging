@@ -75,7 +75,7 @@ for target in targets:
     print("Finished {} grid search".format(target))
     print("Best estimator: {}".format(gs.best_estimator_))
     print("Best parameters: {}".format(gs.best_params_))
-    print("Best score: {]".format(gs.best_score_))
+    print("Best score: {}".format(gs.best_score_))
     print('Saving under gs_GradientBoosting_'+target+'.pkl')
     
     joblib.dump(gs, 'gs_GradientBoosting_'+target+'.pkl')
