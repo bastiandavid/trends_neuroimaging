@@ -1,3 +1,3 @@
 # trends_neuroimaging
 
-Scripts for Trends Neuroimaging Kaggle competition. WIP
+Scripts for Trends Neuroimaging Kaggle competition. WIP: tuning hyperparameters
